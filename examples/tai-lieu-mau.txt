@@ -1,0 +1,22 @@
+ÔN TẬP LẬP TRÌNH WEB NÂNG CAO: REACT VÀ REST API
+
+React là một thư viện JavaScript dùng để xây dựng giao diện người dùng theo mô hình component.
+Function Component là các hàm JavaScript trả về các phần tử giao diện.
+useState được dùng để tạo và cập nhật state bên trong function component.
+useEffect giúp đồng bộ component với hệ thống bên ngoài, ví dụ đăng ký sự kiện hoặc gọi API.
+useMemo ghi nhớ kết quả tính toán khi dependencies không thay đổi.
+useRef lưu một giá trị có thể thay đổi mà không gây render lại.
+Props là dữ liệu được truyền từ component cha xuống component con.
+
+REST là một kiểu kiến trúc phổ biến để xây dựng dịch vụ web.
+GET dùng để lấy thông tin từ server, POST thường dùng để tạo dữ liệu,
+PUT thường dùng để thay thế dữ liệu, PATCH cập nhật một phần, DELETE xóa tài nguyên.
+Mã HTTP 200 là yêu cầu thành công, 201 là tạo dữ liệu thành công,
+400 biểu thị yêu cầu không hợp lệ, 401 là chưa được xác thực,
+403 là không đủ quyền truy cập, 404 là không tìm thấy tài nguyên,
+500 là lỗi nội bộ máy chủ.
+
+JWT là JSON Web Token, được dùng để chuyển thông tin xác thực giữa client và server.
+Mật khẩu người dùng phải được băm trước khi lưu trong database bằng bcrypt hoặc Argon2.
+CORS là chính sách trên trình duyệt kiểm soát truy cập giữa các nguồn khác nhau.
+SQL database như PostgreSQL hoặc SQLite lưu dữ liệu trong các bảng quan hệ.

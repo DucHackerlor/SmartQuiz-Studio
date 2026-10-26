@@ -1,0 +1,31 @@
+name: SmartQuiz CI
+on:
+  push:
+    branches: [main, master]
+  pull_request:
+
+jobs:
+  test-and-build:
+    runs-on: ubuntu-latest
+    timeout-minutes: 10
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
+        with:
+          node-version: 22
+      - name: Install dependencies
+        run: npm install --no-audit --no-fund
+      - name: Community security and quota tests
+        run: npm run test:community
+      - name: Groq adapter mock tests
+        run: npm run test:groq
+      - name: Static syntax tests
+        run: npm run check:static
+      - name: Test API and scoring
+        run: npm test
+        env:
+          DB_PATH: ':memory:'
+          JWT_SECRET: ci-only-test-key-for-automated-build
+          AI_MODE: demo
+      - name: Build frontend
+        run: npm run build

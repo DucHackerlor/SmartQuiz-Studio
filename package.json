@@ -1,0 +1,28 @@
+{
+  "name": "smartquiz-studio",
+  "version": "1.0.0",
+  "private": true,
+  "workspaces": [
+    "apps/api",
+    "apps/web"
+  ],
+  "scripts": {
+    "dev": "concurrently -k -n API,WEB -c cyan,magenta \"npm run dev -w apps/api\" \"npm run dev -w apps/web\"",
+    "build": "npm run build -w apps/web",
+    "test": "npm run test -w apps/api",
+    "start": "npm run start -w apps/api",
+    "doctor": "node scripts/doctor.mjs",
+    "smoke": "node scripts/smoke.mjs",
+    "check:static": "node scripts/check-static.mjs",
+    "ai:check": "node scripts/ai-live-check.mjs",
+    "test:community": "node --test scripts/community.test.mjs",
+    "test:model": "node --test scripts/gemini-settings.test.mjs",
+    "test:groq": "node --test scripts/groq-adapter.test.mjs"
+  },
+  "devDependencies": {
+    "concurrently": "^9.2.1"
+  },
+  "engines": {
+    "node": ">=22.13.0"
+  }
+}
